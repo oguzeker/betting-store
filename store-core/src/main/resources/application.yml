@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: store-core
+  main:
+    banner-mode: OFF
+  data:
+    mongodb:
+      host: mongo
+      port: 27017
+      database: store
+      username: root
+      password: example
+      authentication-database: admin
+
+server:
+  port: 1905
+
+product-api:
+  base-url: 'https://run.mocky.io'
+
+eureka:
+  instance:
+    preferIpAddress: false
+  client:
+    healthcheck:
+      enabled: false
+    serviceUrl:
+      defaultZone: http://store-eureka-discovery:8761/eureka/
+
+logging:
+  level:
+    ROOT: INFO
+    feign:
+      Logger: DEBUG
+  file:
+    max-history: 0
+    max-size: 1GB
+default:
+  locale: en_US
+
+feign:
+  connect:
+    timeout: 1500
+  read:
+    timeout: 1500
+
+connection:
+  timeout: 3000
+  max-connection-count: 20
+  time-to-live: 2
+  max-redirection-count: 10
+
+swagger:
+  api-info:
+    title: Betting Store Core
+    description: In this web page, you can interact with API resources of Store Demo.
+    version: 1.0.0-SNAPSHOT
+    terms-of-service-url: 'https://generator.lorem-ipsum.info/terms-and-conditions'
+    contact:
+      name: Oguz Erhan Eker
+      url: 'https://www.linkedin.com/in/oguzerhaneker/'
+      email: 'eker.oguz@gmail.com'
+    license: 'Apache License Version 2.0'
+    license-url: 'https://www.apache.org/licenses/LICENSE-2.0'
+    vendor-extensions:
+      -
+        name: Betting
+        value: Store Demo Application
+
